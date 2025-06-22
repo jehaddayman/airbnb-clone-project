@@ -110,5 +110,71 @@ All components are built to be **reusable** and **responsive**.
 
 ## 📁 Repository Structure (Planned)
 ## ✅ Status
+# Airbnb Clone Project Backend
+
+## 🔍 Project Overview
+This project is a backend simulation of Airbnb. It provides a secure and scalable architecture to handle core functionalities like user authentication, property management, bookings, payments, and reviews. It helps learners gain hands-on experience with backend frameworks, database systems, and deployment pipelines.
+
+## 👥 Team Roles
+### Backend Developer
+Implements REST and GraphQL APIs, manages business logic, and ensures integration with database and third-party services.
+
+### Database Administrator (DBA)
+Designs and manages the relational schema, ensures indexing and query optimization, and handles migrations and backups.
+
+### DevOps Engineer
+Builds CI/CD pipelines, manages containerization with Docker, oversees application deployment, and ensures environment consistency.
+
+### QA Engineer
+Creates and executes test plans, automates testing, and ensures the backend adheres to quality and functional standards.
+
+## 🧰 Technology Stack
+- **Django**: Web framework used to build backend logic and APIs.
+- **Django REST Framework**: Facilitates RESTful API development.
+- **PostgreSQL**: Relational database to store application data.
+- **GraphQL**: Enables flexible and efficient data querying.
+- **Docker**: For containerizing and deploying the application.
+- **Redis & Celery**: Used for caching and background task processing.
+- **GitHub Actions**: Implements CI/CD pipelines.
+
+## 🗃️ Database Design
+### Entities:
+- **Users**: `id`, `name`, `email`, `password`, `role`
+- **Properties**: `id`, `title`, `description`, `location`, `price`, `user_id`
+- **Bookings**: `id`, `property_id`, `user_id`, `start_date`, `end_date`, `status`
+- **Payments**: `id`, `booking_id`, `amount`, `status`, `payment_date`
+- **Reviews**: `id`, `property_id`, `user_id`, `rating`, `comment`, `created_at`
+
+### Relationships:
+- A **user** can list multiple **properties**.
+- A **property** can have many **bookings** and **reviews**.
+- A **booking** belongs to one **user** and one **property**.
+- A **payment** is linked to a specific **booking**.
+- A **review** is created by a user for a property.
+
+## 🧩 Feature Breakdown
+- **User Management**: Secure sign-up, login, and profile management.
+- **Property Management**: CRUD operations for property listings.
+- **Booking System**: Allow users to make and manage bookings.
+- **Payment Processing**: Handles payment transactions for bookings.
+- **Review System**: Enables users to leave ratings and comments on properties.
+
+## 🔐 API Security
+- **Authentication**: Secure login using JWT or session tokens.
+- **Authorization**: Role-based access control to restrict unauthorized actions.
+- **Rate Limiting**: Prevents abuse by limiting API request frequency.
+- **Input Validation**: Ensures only valid data is processed.
+- **HTTPS**: Protects data transmission.
+
+## 🔄 CI/CD Pipeline
+- **What is CI/CD?**: Continuous Integration and Continuous Deployment automate testing and delivery.
+- **Tools Used**:
+  - **GitHub Actions**: Runs tests, checks code, and deploys automatically.
+  - **Docker**: Creates reproducible environments for development and production.
+- **Benefits**: Faster delivery, fewer errors, consistent environments, and reliable deployments.
+
+---
+
+_This README was generated as part of the StayBackend Airbnb Clone project in the ALX ProDev Software Engineering Program._
 
 Project is under development as part of the ALX Software Engineering program – Week 12 milestone.
